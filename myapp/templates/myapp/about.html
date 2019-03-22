@@ -1,0 +1,98 @@
+{% extends 'myapp/base.html' %} <!-- ktory plik jako szablon -->
+{% load static %}
+
+{% block pagetitle %} About {% endblock %}
+{% block nav-item-about %}active{% endblock %}
+
+{% block content2 %} <!-- w jakim miejscu w pliku base.html -->
+
+<!--     <h1>About</h1>
+    <p>This is about page.</p>
+
+    {% if lucky_num == unlucky_num %}
+      <p>You have no luck or uncluck!</p>
+    {% else %}
+      <p>Lucky number: {{ lucky_num }}<br>
+         Unlucky number: {{ unlucky_num }}
+       </p>
+    {% endif %}
+
+    <h3>My tech skills:</h3>
+    <ul>
+    {% for tech in mytech %}
+      <li>
+        <a href="{{ tech.url }}">{{ tech.name }}</a>: {{ tech.level }}
+      </li>
+    {% endfor %}
+    </ul> -->
+
+
+    <header class="masthead text-center text-white">
+      <div class="masthead-content">
+        <div class="container">
+          <!-- <h1 class="masthead-heading mb-0">HELLO WORLD!</h1> -->
+          <h2 class="masthead-subheading mb-0"></h2>
+          <!-- <a href="#" class="btn btn-primary btn-xl rounded-pill mt-5">Learn More</a> -->
+        </div>
+      </div>
+      <div class="bg-circle-1 bg-circle"></div>
+      <div class="bg-circle-2 bg-circle"></div>
+      <div class="bg-circle-3 bg-circle"></div>
+      <div class="bg-circle-4 bg-circle"></div>
+    </header>
+
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-2">
+            <div class="p-5">
+              <img class="img-fluid rounded-circle" src="{% static 'myapp/images/prof.JPG' %}" alt="">
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <div class="p-5">
+              <h2 class="display-4">Lorem ipsum</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac efficitur dui, in egestas ex. Fusce sed mattis dolor, ac sodales tortor. Ut feugiat enim non tortor elementum luctus. Integer rhoncus sapien eu tellus suscipit, vel sollicitudin lectus ullamcorper. Duis feugiat sagittis sapien, eget luctus ante eleifend id. Suspendisse semper mauris ut nulla dictum semper. Nulla volutpat lobortis felis. Nam ac ligula ut velit tincidunt vehicula et scelerisque lorem. Etiam posuere maximus libero, a dignissim tellus rutrum vel. Donec vitae iaculis nibh. Fusce blandit a ligula et semper. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse tempor luctus eros, vitae dapibus dolor porttitor pretium.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="p-5">
+              <img class="img-fluid rounded-circle" src="{% static 'myapp/images/kotki.jpg' %}" width="400">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="p-5">
+              <h2 class="display-4">We salute you!</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-2">
+            <div class="p-5">
+              <img class="img-fluid rounded-circle" src="{% static 'myapp/images/pizza.jpg' %}" width="400">
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <div class="p-5">
+              <h2 class="display-4">Let there be rock!</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}

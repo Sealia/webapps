@@ -1,0 +1,36 @@
+{% extends 'myapp/base.html' %} <!-- ktory plik jako szablon -->
+{% load static %}
+
+{% block pagetitle %} News {% endblock %}
+{% block nav-item-news %}active{% endblock %}
+
+{% block content2 %}
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12">
+      <h1>News</h1>
+      <a href="{% url 'news:home' %}">New Scientist</a> | 
+      <a href="{% url 'news:index' 'hacker-news' %}">Hacker News</a> |
+      <a href="{% url 'news:index' 'techradar' %}"> TechRadar</a> |
+      <a href="{% url 'news:index' 'national-geographic' %}"> National Geographic</a>
+      {% if newsapi.status == 'ok' %}
+      <div class="card-columns">
+        {% for article in newsapi.articles %}
+        <!-- begin::Article -->
+        <div class="card">
+          <img class="card-img-top" src="{{ article.urlToImage }}"  alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><a href="{{article.url}}"" target="_blank">{{ article.title }}</a></h5>
+            <p class="card-text">{{ article.description}}</p>
+          </div>
+        </div>
+        <!-- end::Article -->
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'myapp/base.html' %} <!-- ktory plik jako szablon -->
+
+{% load static %}
+
+{% block pagetitle %} Biotools {% endblock %}
+{% block nav-item-tools %}active{% endblock %}
+
+{% block content2 %}
+  <nav aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'myapp:home' %}">Home</a></li>
+      <li class="breadcrumb-item">Tools</li>
+      <li class="breadcrumb-item active" aria-current="page">RevComp</li>
+    </ol>
+  </nav>
+
+<br>
+
+
+    <div class="col-12">
+    		{% if results %}
+        <br>
+        <br>
+        <h1>Revcomp - Results</h1>
+       <p>  {% for i in results.items %}
+              {{ i.1 }}
+
+          
+          {% endfor %}
+          </p> 
+          <br>
+          <br>
+    		{% else %}
+        <h1>Revcomp</h1>
+    			<form method="post">
+          		{% csrf_token %}
+          		{{ form.as_p }}
+         		 <button type="submit">Submit</button>
+
+
+       			 </form>
+
+    		{% endif %}
+ </div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'myapp/base.html' %} <!-- ktory plik jako szablon -->
+
+{% load static %}
+
+{% block pagetitle %} Biotools {% endblock %}
+{% block nav-item-tools %}active{% endblock %}
+
+{% block content2 %} <!-- w jakim miejscu w pliku base.html -->
+  <nav aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'myapp:home' %}">Home</a></li>
+      <li class="breadcrumb-item">Tools</li>
+      <li class="breadcrumb-item active" aria-current="page">Sequence Content</li>
+    </ol>
+  </nav>
+
+<br>
+
+
+  
+    <div class="col-12">
+     
+        {% if results %}
+        <P class="blocktext">
+        <table border="5">
+           <h1>SeqContent - Results</h1>
+          <br>
+          <br>
+
+        {% for k, v in results.items %}
+        
+          <tr>
+            <td>{{ k }}</td> <td> {{ v.0 }} </td> <td>{{ v.1|floatformat:1 }}</td>
+
+          </tr>
+
+        
+        {% endfor %}
+     
+
+        </table>
+          <br>
+        <br>
+        {% else %}
+        <h1>Seqcontent</h1>
+         <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">Calculate</button>
+
+
+        </form>
+        {% endif %}
+
+    </div>
+  
+
+{% endblock %}
+
+
+    <!-- {{ block.super }}  wyswielta domysle wartosci z block content -->

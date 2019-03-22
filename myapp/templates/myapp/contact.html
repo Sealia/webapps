@@ -1,0 +1,48 @@
+{% extends 'myapp/base.html' %} <!-- ktory plik jako szablon -->
+
+{% load static %}
+
+{% block pagetitle %} Contact {% endblock %}
+{% block nav-item-contact %}active{% endblock %}
+
+{% block content2 %} <!-- w jakim miejscu w pliku base.html -->
+
+<!--
+    <h1>Contact</h1>
+    <p>This is a contact page.</p>
+
+    <img src="{% static 'myapp/img/dog.jpg' %}">
+
+{% include 'myapp/include/widget.html' %}
+-->
+<br>
+<br>
+ <div class="container marketing">
+
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+          <div class="col-lg-4">
+            <a target="_blank" href="https://www.facebook.com/sealia.borusiak" ><img class="rounded-circle" src="{% static 'myapp/images/f.jpg' %}" alt="Generic placeholder image" width="140" height="140"></a>
+           <a target="_blank" href="https://www.facebook.com/sealia.borusiak"> <h2>Sealia Borusiak</h2></a>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <a target="_blank" href="https://www.instagram.com/typowasela/"><img class="rounded-circle" src="{% static 'myapp/images/i.jpg' %}" alt="Generic placeholder image" width="140" height="140"></a>
+           <a target="_blank" href="https://www.instagram.com/typowasela/"> <h2>typowasela</h2></a>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+           <a target="_blank" href="https://www.linkedin.com/in/sealia-borusiak-272169168/"><img class="rounded-circle" src="{% static 'myapp/images/l.png' %}" alt="Generic placeholder image" width="140" height="140"></a>
+           <a target="_blank" href="https://www.linkedin.com/in/sealia-borusiak-272169168/"> <h2>Sealia Borusiak</h2></a>
+        </div><!-- /.row -->
+        <div class="col-lg-4">
+           <a href="#"><img class="rounded-circle" src="#" alt="" width="140" height="140"></a>
+           <a href="#"> <h2></h2></a></div>
+       		 <div class="col-lg-4">
+          	 <a  href="mailto:sealiaborusiak@wp.pl"><img class="rounded-circle" src="{% static 'myapp/images/wp.png' %}" alt="Generic placeholder image" width="140" height="140"></a>
+          	 <a  href="mailto:sealiaborusiak@wp.pl"> <h2>sealiaborusiak@wp.pl</h2></a>
+      		  </div><!-- /.row -->
+        </div><!-- /.row -->
+    </div>
+{% endblock %}
+
+
+    <!-- {{ block.super }}  wyswielta domysle wartosci z block content -->
